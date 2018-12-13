@@ -1,5 +1,5 @@
 
-#%% 에러 
+#%% 에러가 아니다  
     
 sql = "SELECT * FROM mytbl WHERE name LIKE 'john%'"
 mycursor.execute(sql)

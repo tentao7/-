@@ -1,0 +1,79 @@
+
+#%% 에러 
+    
+sql = "SELECT * FROM mytbl WHERE name LIKE 'john%'"
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x)  
+       
+#%%   
+    
+SELECT * FROM mytbl WHERE address ='highway 3'
+SELECT * FROM mytbl WHERE name LIKE '%3'
+SELECT * FROM mytbl WHERE name LIKE '%3%'
+SELECT * FROM mytbl WHERE name LIKE '%3%'  AND address LIKE '%3%' 
+
+SELECT * FROM mytbl WHERE name ='john2'
+
+#%% 
+sql = "SELECT * FROM mytbl ORDER BY name DESC"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x)  
+       
+#%%
+sql = "SELECT * FROM mytbl ORDER BY name DESC,address DESC"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x)  
+       
+#%%
+sql = "SELECT * FROM mytbl ORDER BY address DESC, name ASC"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x) 
+    
+#%%
+sql = "SELECT * FROM mytbl WHERE (name LIKE 'jo%') AND (address ='HI%) ORDER BY address DESC, name ASC"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x) 
+#%%
+sql="DELETE FROM mytbl WHERE mytbl name IN('john4')"
+
+#"DELETE FROM mytbl WHERE address ='highway 3'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+for x in myresult:
+    print(x)  
+#%% 테이블 만들기 
+
+
+
+mycursor.execute ('SHOW TABLES')
+for x in mycursor:
+    print(x)
+    
+#%%
+    
+
+    
+mycursor.execute ('DESCRIBE TABLES')
+for x in mycursor:
+    print(x)    
